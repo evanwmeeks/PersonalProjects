@@ -34,9 +34,15 @@ A new personal project, this is a work in progress. The long term goal of this a
 		
 		postgres.py
 
-			This file acts as the Python - SQL database interpreter. A fully custom built class, I'm developing this as a means of fully controlling the database from within the banking app, never needing to use pgAdmin or a similar GUI. 
+			This file acts as the Python - SQL database interpreter. A fully custom built class, 
+			I'm developing this as a means of fully controlling the database from within the banking app,
+			never needing to use pgAdmin or a similar GUI. 
 
 		user_module.py
 
-			As of 8/1/23, this module is something of a cross between my original ideation phase and actual development. I had originally wanted this to be a simple OOP project and began scripting as if Python and CSV files would fully encompass my needs. However, since deciding to build a fully-fledged application instead, this file has become a means of testing the postgres module for the time being, and will eventually be fleshed out to be Django friendly. 
+			As of 8/1/23, this module is something of a cross between my original ideation phase and
+			actual development. I had originally wanted this to be a simple OOP project and began scripting
+			as if Python and CSV files would fully encompass my needs. However, since deciding to build a 
+			fully-fledged application instead, this file has become a means of testing the postgres module
+			for the time being, and will eventually be fleshed out to be Django friendly. 
 
