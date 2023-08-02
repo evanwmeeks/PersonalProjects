@@ -3,9 +3,23 @@ import os
 import csv
 from datetime import datetime
 from postgres import postgres
+
 filepath = os.getcwd() + "/data.csv"
 
 class User:
+    """
+    Represents a user with personal information stored in a .csv database file.
+
+    Attributes:
+        id (int): Unique identifier for the user.
+        social (str): Social security number of the user.
+        first_name (str): First name of the user.
+        last_name (str): Last name of the user.
+        birthday (datetime.datetime): Birthday of the user.
+        gender (str): Gender of the user.
+        age (int): Age of the user.
+    """
+
     # This code ensures that the .csv database file exists
     header_row = ["ID", "First Name", "Last Name", "Birthday", "Gender", "SSN"]
     if not os.path.exists(filepath):
@@ -14,6 +28,15 @@ class User:
             csvwriter.writerow(header_row)
 
     def __init__(self, name, social, birthday, gender):
+        """
+        Initialize a new User object.
+
+        Args:
+            name (str): Full name of the user (first name and last name separated by a space).
+            social (str): Social security number of the user.
+            birthday (str): Birthday of the user in the format "MM/DD/YYYY".
+            gender (str): Gender of the user ('M' for male, 'F' for female, etc.).
+        """
         self.id = self.check_id(filepath)
         self.social = str(social)
         self.first_name = name.split()[0]
@@ -23,7 +46,6 @@ class User:
         self.age = self.calculate_age()
 
         # Checks to see if the provided SSN exists, denies creation if so.
-
         with open(filepath, mode='a', newline='') as f:
             if not self.social_exists():
                 csvwriter = csv.writer(f)
@@ -34,6 +56,12 @@ class User:
                 exit()
 
     def social_exists(self):
+        """
+        Check if the social security number already exists in the .csv database file.
+
+        Returns:
+            bool: True if the social security number exists, False otherwise.
+        """
         with open(filepath, mode='r', newline='') as f:
             csvreader = csv.reader(f)
             next(csvreader)  # Skip the header row
@@ -43,13 +71,27 @@ class User:
         return False
 
     def calculate_age(self):
+        """
+        Calculate the age of the user based on the birthday.
+
+        Returns:
+            int: Age of the user.
+        """
         today = datetime.now()
         return today.year - self.birthday.year - ((today.month, today.day) <
                                                   (self.birthday.month, self.birthday.day))
 
-    # Checks that the random ID isn't already used
     @staticmethod
     def check_id(filepath):
+        """
+        Generate a random user ID and check if it's already used in the .csv database file.
+
+        Args:
+            filepath (str): Path to the .csv database file.
+
+        Returns:
+            int: Unique user ID.
+        """
         while True:
             user_id = random.randint(100000000, 999999999)
             with open(filepath, mode='r', newline='') as f:
