@@ -46,3 +46,5 @@ A new personal project, this is a work in progress. The long term goal of this a
 			fully-fledged application instead, this file has become a means of testing the postgres module
 			for the time being, and will eventually be fleshed out to be Django friendly. 
 
+### wasabi_uploader
+A script developed for iPoint Solutions,  this module allows support teams to quickly add, delete, and modify  files in our Wasabi Bucket. 
