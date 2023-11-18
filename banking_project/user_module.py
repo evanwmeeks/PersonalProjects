@@ -1,4 +1,5 @@
 from postgres import postgres
+"""This is functioning solely as a sandbox for postgres.py implementation for the time being"""
 
 bank = postgres(
                 host="localhost",

@@ -1,7 +1,6 @@
 import boto3
 import os
 
-
 class WasabiUploader:
 
     def __init__(self, directory):

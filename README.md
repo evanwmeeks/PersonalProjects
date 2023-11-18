@@ -26,6 +26,14 @@ Developed during my time at iPoint Solutions, this Mac App was designed to allow
 			 users to multi-select files for upload, uploads the files, then presents a count of the total 
 			 number of files uploaded. The user is then given the option to upload more or quit the application.
 
+### wasabi_interface
+   Currently separate from the Wasabi Uploader, this is being developed to act as a GUI for Wasabi interactions
+   Files:
+
+       wasabi.py
+
+           The primary Class handling all Wasabi interactions, built using Amazon's Boto3
+
 
 ### banking_project
 A new personal project, this is a work in progress. The long term goal of this application is to build a standalone 'bank' using Django and postgreSQL. This applicaiton is a playground of sorts for me to practice OOP, learn best practices, and build a truly full stack application. 
@@ -46,5 +54,12 @@ A new personal project, this is a work in progress. The long term goal of this a
 			fully-fledged application instead, this file has become a means of testing the postgres module
 			for the time being, and will eventually be fleshed out to be Django friendly. 
 
-### wasabi_uploader
-A script developed for iPoint Solutions,  this module allows support teams to quickly add, delete, and modify  files in our Wasabi Bucket. 
+
+### The_Big_Book_of_Small_Python_Projects	
+This is a collection inspired by follow along coding projects while reading through "The Big Book of Small Python Projects: 81 Easy Practice Programs"  by Al Sweigart. While each of these are based on examples of the book, they have been modified to be more challenging and/or entertaining.
+
+	Files:
+
+		Bagels.py
+
+			From the book: "In Bagels, a deductive logic game, you must guess a secret three-digit number based on clues. The game offers one of the following hints in response to your guess:	"Pico" when your guess has a correct digit in the wrong place, "Fermi" when your guess has a correct digit in the correct place, and "Bagels" if your guess has no correct digits. You have 10 tries to guess the secret number."
